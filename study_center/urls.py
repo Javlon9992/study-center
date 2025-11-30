@@ -16,11 +16,13 @@ Including another URLconf
 """
 # study_center/urls.py
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from app.views import index, delete_student, portfolio, projects  # projects ni import qilishni unutmang!
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('accounts/', include('django.contrib.auth.urls')),
     
     # 1. Bosh sahifa (Portfolio)
     path('', portfolio, name='home'),
