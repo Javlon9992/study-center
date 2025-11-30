@@ -7,6 +7,7 @@ from .forms import StudentForm
 def portfolio(request):
     return render(request, 'portfolio.html')
 
+
 # 1. Ro'yxatni ko'rish va Yangi qo'shish (bitta sahifada)
 def index(request):
     students = Student.objects.all()# Bazadan hammasini olamiz
@@ -55,3 +56,8 @@ def delete_student(request, id):
     student = get_object_or_404(Student, id=id)
     student.delete() # Bazadan o'chirish
     return redirect('crm_home')
+
+
+# app/views.py ga qo'shing
+def projects(request):
+    return render(request, 'projects.html')

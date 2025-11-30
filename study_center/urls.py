@@ -17,7 +17,7 @@ Including another URLconf
 # study_center/urls.py
 from django.contrib import admin
 from django.urls import path
-from app.views import index, delete_student, portfolio # <--- portfolio ni qo'shdik
+from app.views import index, delete_student, portfolio, projects  # projects ni import qilishni unutmang!
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,4 +30,6 @@ urlpatterns = [
     
     # 3. O'chirish funksiyasi
     path('delete/<int:id>/', delete_student, name='delete_student'),
+
+    path('projects/', projects, name='projects'), # YANGI
 ]
