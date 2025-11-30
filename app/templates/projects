@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mening Loyihalarim</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { background: #0f2027; color: white; font-family: 'Segoe UI', sans-serif; padding-bottom: 50px; }
+        .header-title { text-align: center; margin: 50px 0; }
+        .project-card { 
+            border: none; 
+            border-radius: 15px; 
+            overflow: hidden; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #1c2e36;
+            height: 100%;
+        }
+        .project-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 10px 20px rgba(0,242,254, 0.2); 
+        }
+        .card-img-top { 
+            height: 250px; 
+            object-fit: cover; 
+            transition: transform 0.5s ease; 
+        }
+        .project-card:hover .card-img-top { transform: scale(1.1); }
+        .card-body { padding: 20px; text-align: center; }
+        .card-title { color: #00f2fe; font-weight: bold; margin-bottom: 10px; }
+        .badge-custom { background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 10px; font-size: 0.8em; margin: 2px; }
+        .back-btn { position: fixed; top: 20px; left: 20px; z-index: 100; }
+    </style>
+</head>
+<body>
+
+    <a href="{% url 'home' %}" class="btn btn-outline-light back-btn"><i class="fas fa-arrow-left"></i> Orqaga</a>
+
+    <div class="container">
+        <div class="header-title">
+            <h1 class="fw-bold">Mening Loyihalarim</h1>
+            <p class="text-secondary">Bizneslarni avtomatlashtirish va raqamlashtirish namunalari</p>
+        </div>
+
+        <div class="row g-4">
+            
+            <div class="col-12"><h3 class="border-bottom pb-2 border-secondary">📱 Mobile Ilovalar (AppSheet)</h3></div>
+
+            <div class="col-md-4">
+                <div class="project-card">
+                    <img src="{% static 'images/mobile_davomat.jpg' %}" class="card-img-top" alt="Davomat">
+                    <div class="card-body">
+                        <h5 class="card-title">Elektron Davomat</h5>
+                        <p class="small text-light opacity-75">O'quvchilar davomatini telefonda belgilash tizimi.</p>
+                        <span class="badge-custom">AppSheet</span> <span class="badge-custom">Automation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="project-card">
+                    <img src="{% static 'images/mobile_baholash.jpg' %}" class="card-img-top" alt="Baholash">
+                    <div class="card-body">
+                        <h5 class="card-title">Baholash & Telegram Bot</h5>
+                        <p class="small text-light opacity-75">Ota-onalarga baho va davomatni SMS/Telegram orqali yuborish.</p>
+                        <span class="badge-custom">Telegram API</span> <span class="badge-custom">AppSheet</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="project-card">
+                    <img src="{% static 'images/mobile_sales.jpg' %}" class="card-img-top" alt="Sales">
+                    <div class="card-body">
+                        <h5 class="card-title">Ombor & Savdo</h5>
+                        <p class="small text-light opacity-75">Tovarlar kirim-chiqimi va kassani nazorat qilish.</p>
+                        <span class="badge-custom">Inventory</span> <span class="badge-custom">Sales</span>
+                    </div>
+                </div>
+            </div>
+
+             <div class="col-md-4">
+                <div class="project-card">
+                    <img src="{% static 'images/mobile_taxi.jpg' %}" class="card-img-top" alt="Taxi">
+                    <div class="card-body">
+                        <h5 class="card-title">Xizmatlar Katalogi</h5>
+                        <p class="small text-light opacity-75">Buyurtmalar qabul qilish va xizmat ko'rsatish ilovasi.</p>
+                        <span class="badge-custom">Service</span> <span class="badge-custom">Booking</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mt-5"><h3 class="border-bottom pb-2 border-secondary">📊 Analitika & Dashboardlar</h3></div>
+
+            <div class="col-md-6">
+                <div class="project-card">
+                    <img src="{% static 'images/dash_finance.png' %}" class="card-img-top" alt="Moliya">
+                    <div class="card-body">
+                        <h5 class="card-title">Moliya Dashboardi</h5>
+                        <p class="small text-light opacity-75">Kunlik tushumlar va xarajatlar statistikasi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="project-card">
+                    <img src="{% static 'images/dash_debt.png' %}" class="card-img-top" alt="Qarzdorlar">
+                    <div class="card-body">
+                        <h5 class="card-title">Qarzdorlik Nazorati</h5>
+                        <p class="small text-light opacity-75">Mijozlar balansi va to'lovlar monitoringi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="project-card">
+                    <img src="{% static 'images/dash_food.png' %}" class="card-img-top" alt="Ovqatlanish">
+                    <div class="card-body">
+                        <h5 class="card-title">Oshxona Statistikasi</h5>
+                        <p class="small text-light opacity-75">Nonushta, tushlik va kechki ovqat hisoboti.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="project-card">
+                    <img src="{% static 'images/dash_grades.png' %}" class="card-img-top" alt="Baholar">
+                    <div class="card-body">
+                        <h5 class="card-title">O'zlashtirish Ko'rsatkichlari</h5>
+                        <p class="small text-light opacity-75">O'quvchilar va o'qituvchilar reytingi.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="text-center mt-5 text-secondary">
+        <small>© 2025 Javlonbek Tojiqulov</small>
+    </div>
+
+</body>
+</html>
