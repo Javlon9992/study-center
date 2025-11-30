@@ -3,12 +3,14 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q
 from .models import Student
 from .forms import StudentForm
+from django.contrib.auth.decorators import login_required
 
 def portfolio(request):
     return render(request, 'portfolio.html')
 
 
 # 1. Ro'yxatni ko'rish va Yangi qo'shish (bitta sahifada)
+@login_required
 def index(request):
     students = Student.objects.all()# Bazadan hammasini olamiz
     # --- QIDIRUV MANTIG'I ---
