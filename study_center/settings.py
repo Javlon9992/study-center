@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-a-=1_cum+o49eopp1v!w*mjwqx9x-ledt#8o&oz5c5yhk+@7i9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # study_center/settings.py
 
