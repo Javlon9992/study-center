@@ -28,7 +28,7 @@ DEBUG = True
 
 # study_center/settings.py
 
-ALLOWED_HOSTS = ['jetjava.uz', 'www.jetjava.uz', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['jetjava.uz', 'www.jetjava.uz', '127.0.0.1', 'localhost', '95.130.227.123']
 
 
 # Application definition
