@@ -17,10 +17,17 @@ Including another URLconf
 # study_center/urls.py
 from django.contrib import admin
 from django.urls import path
-from app.views import index, delete_student
+from app.views import index, delete_student, portfolio # <--- portfolio ni qo'shdik
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index'),  # Bosh sahifa
-    path('delete/<int:id>/', delete_student, name='delete_student'), # O'chirish yo'li
+    
+    # 1. Bosh sahifa (Portfolio)
+    path('', portfolio, name='home'),
+    
+    # 2. CRM loyihasi (Endi /crm manzilida bo'ladi)
+    path('crm/', index, name='crm_home'), # Ismini crm_home deb o'zgartirdik
+    
+    # 3. O'chirish funksiyasi
+    path('delete/<int:id>/', delete_student, name='delete_student'),
 ]

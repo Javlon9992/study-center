@@ -4,6 +4,9 @@ from django.db.models import Q
 from .models import Student
 from .forms import StudentForm
 
+def portfolio(request):
+    return render(request, 'portfolio.html')
+
 # 1. Ro'yxatni ko'rish va Yangi qo'shish (bitta sahifada)
 def index(request):
     students = Student.objects.all()# Bazadan hammasini olamiz
@@ -24,7 +27,7 @@ def index(request):
         form = StudentForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('index')
+            return redirect('crm_home')
     else:
         form = StudentForm()
 
@@ -41,7 +44,7 @@ def index(request):
         form = StudentForm(request.POST)
         if form.is_valid():
             form.save() # Bazaga saqlash
-            return redirect('index') # Sahifani yangilash
+            return redirect('crm_home') # Sahifani yangilash
     else:
         form = StudentForm()
 
@@ -51,4 +54,4 @@ def index(request):
 def delete_student(request, id):
     student = get_object_or_404(Student, id=id)
     student.delete() # Bazadan o'chirish
-    return redirect('index')
+    return redirect('crm_home')
